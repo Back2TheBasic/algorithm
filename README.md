@@ -2,7 +2,10 @@
 
 JavaScript Algorithm
 
-제출할때는 경로 /dev/stdin 으로 변경하기!
+## 파일 이름 규칙
+
+문제번호\_이름.js \
+ex) 2864_sangbong.js
 
 ```javascript
 var fs = require("fs");
