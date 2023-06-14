@@ -4,8 +4,8 @@ const input = require("fs")
     .trim()
     .split("\n");
 
-console.log(input)
-console.log("pug")
+// console.log(input)
+// console.log("pug")
 
 const N = Number(input.shift())
 const a_arr = input.shift().split(" ")
