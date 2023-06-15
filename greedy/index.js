@@ -5,7 +5,7 @@ const path = require("path");
 const issueNumber = process.argv[2];
 
 // 유저 이름을 바꿔주세요!
-const userName = "sangbong1";
+const userName = "sangbong";
 
 // 스크립트 경로!
 const scriptPath = path.join(
