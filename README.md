@@ -7,6 +7,17 @@ JavaScript Algorithm
 문제번호\_이름.js \
 ex) 2864_sangbong.js
 
+## Scripts 추가 (230616)
+
+1. greedy/index.js 파일 useName 변경
+
+```javascript
+// 유저 이름을 바꿔주세요!
+const userName = [유저이름];
+```
+
+2. npm run greedy [문제번호]
+
 ```javascript
 var fs = require("fs");
 
