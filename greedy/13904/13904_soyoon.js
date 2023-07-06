@@ -14,15 +14,11 @@ var input = fs.readFileSync("dev/stdin").toString().split("\n");
 const homeworks = input.slice(1);
 
 const getCurrentDayChoices = (currentDay) => {
-  const lastdayHomeworks = homeworks.filter(
-    (homework) => Number(homework.split(" ")[0]) === currentDay
+  return homeworks.filter(
+    (homework) => Number(homework.split(" ")[0]) >= currentDay
   );
-  const restHomeworks = homeworks.filter(
-    (homework) => Number(homework.split(" ")[0]) > currentDay
-  );
-
-  return [...lastdayHomeworks, ...restHomeworks];
 };
+
 const getTargetScoreIndex = (i, targetScore) => {
   let index = i;
   let targetScoreIndex = homeworks.indexOf(`${index} ${targetScore}`);
@@ -34,6 +30,7 @@ const getTargetScoreIndex = (i, targetScore) => {
 
   return targetScoreIndex;
 };
+
 const getScore = () => {
   let score = 0;
   const deadlines = homeworks.map((homework) => Number(homework.split(" ")[0]));
@@ -52,7 +49,7 @@ const getScore = () => {
       i,
       Math.max(...homeworkScores)
     );
-    homeworks.splice(targetScoreIndex, 1);
+    homeworks.splice(targetScoreIndex, 1); // sort 쓰면 훨씬 간단하게 가능
   }
 
   return score;
