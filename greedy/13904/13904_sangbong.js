@@ -15,11 +15,16 @@ let sum = 0;
 const maxDeadline = tasks[0][0];
 
 for (let i = maxDeadline; i > 0; i--) {
-  while (idx < N && tasks[idx][0] >= i) {
+  let hasTasksRemaining = tasks[idx][0] >= i;
+  let hasDeadlineReached = idx < N;
+  let hasTasksInQueue = queue.length > 0;
+
+  while (hasTasksRemaining && hasDeadlineReached) {
     queue.push(tasks[idx++][1]);
     queue.sort((a, b) => a - b);
   }
-  if (queue.length > 0) {
+
+  if (hasTasksInQueue) {
     sum += queue.pop();
   }
 }
