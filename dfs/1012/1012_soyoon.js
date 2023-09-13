@@ -21,9 +21,10 @@ while (testCases--) {
   let [m, n, k] = input[line].split(' ').map(Number);
   let graph = [];
   for (let i = 0; i < n; i++) {
-    graph[i] = new Array(m);
+    graph[i] = new Array(m); // n*m 빈 array 생성
   }
   for (let i = 1; i <= k; i++) {
+    // 심어진 배추 개수
     let [y, x] = input[line + i].split(' ').map(Number);
     graph[x][y] = 1;
   }
